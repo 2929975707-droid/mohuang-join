@@ -1,0 +1,859 @@
+/* 全局初始化样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: '微软雅黑', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    color: #333;
+    background-color: #f8f5f2;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+ul {
+    list-style: none;
+}
+.container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+h2 {
+    font-size: 2.2rem;
+    color: #3c2a1d;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+p {
+    line-height: 1.8;
+    color: #555;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: rgba(60, 42, 29, 0.7);
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    border: none;
+}
+.btn:hover {
+    background-color: rgba(146, 102, 57, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 导航栏样式 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255,255,255,0.98);
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #3c2a1d;
+    letter-spacing: 1px;
+}
+.nav-list {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-list li a {
+    font-size: 1rem;
+    color: #3c2a1d;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.nav-list a:hover, .nav-list a.active {
+    color: #926639;
+	font-weight: 500;
+}
+.mobile-btn {
+    display: none;
+    font-size: 1.5rem;
+    color: #3c2a1d;
+    cursor: pointer;
+}
+/* 导航栏左上角LOGO图片样式 精准控制 */
+.logo-container {
+  width: 180px;
+  height: 70px;
+  overflow: hidden;
+}
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.nav-right-box {
+  padding: 5px 10px;
+}
+
+/* banner全屏样式 */
+.banner {
+    width: 100%;
+    height: 100vh;
+    min-height: unset;
+    max-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: none !important;
+}
+.banner-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+}
+.banner-text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    color: #fff;
+}
+.banner-text h1 {
+    font-size: 3.8rem;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    letter-spacing: 2px;
+}
+.banner-text p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+/* 品牌简介 */
+.about {
+    padding: 80px 0;
+    text-align: center;
+}
+.about .desc {
+    font-size: 1.1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #666;
+    line-height: 1.9;
+}
+
+/* 菜品样式 */
+.menu-category {
+    color: #3c2a1d;
+    font-size: 1.5rem;
+    margin: 40px 0 20px 0;
+	padding-left: 10px;
+	border-left: 4px solid #926639;
+	font-weight: 700;
+}
+.menu-sub {
+    text-align: center;
+    color: #926639;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+.menu-item {
+    background-color: #f8f5f2;
+    border-radius: 12px;
+    overflow: hidden;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+    transition: all 0.35s ease;
+    height: 100%;
+}
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+    display: block;
+}
+.menu-item:hover {
+    transform: translateY(-6px);
+	box-shadow: 0 12px 22px rgba(0,0,0,0.12);
+}
+.menu-item h4 {
+    padding: 15px 20px 5px;
+    color: #3c2a1d;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.menu-item p {
+    padding: 0 20px 20px;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 卖点板块 */
+.feature {
+    padding: 80px 0;
+    text-align: center;
+}
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+/* ✅预约到店板块 - 终极完美版 核心重点✅ */
+.reserve-section {
+    padding: 70px 0;
+    background-color: #3c2a1d;
+    color: #fff;
+    text-align: center;
+}
+.reserve-section h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+/* 四个模块 黄金间距 居中排布 最好看的视觉效果 */
+.reserve-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+/* 四个项目 宽度高度完全一致 绝对对齐 无高低差 */
+.reserve-item {
+    width: 190px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+/* ✅图标样式 统一大小 圆润好看 hover变色✅ */
+.reserve-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #e0d5c8;
+    color: #3c2a1d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 22px;
+    transition: all 0.3s ease;
+}
+.reserve-btn:hover {
+    background-color: #ffffff;
+    transform: scale(1.03);
+}
+/* ✅微信二维码 强制纯正方形 完整展示 无裁切 大小和图标协调✅ */
+/* ============ 匹配你的HTML 类名是 square-qr 二维码专属样式 ============ */
+/* 外层圆形容器 和电话/时钟/地图图标完全一样大、一样样式 */
+.reserve-icon.qr-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #e0d5c8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    transition: all 0.3s ease;
+    padding: 2px;
+}
+/* 核心：二维码本身 正方形+完美尺寸 不裁切，和图标匹配 */
+.square-qr {
+    width: 70px;
+    height: 70px;
+    display: block;
+    background-color: #ffffff;
+    object-fit: cover; /* 完美填满，无空隙 */
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 鼠标悬浮效果 和其他图标统一 */
+.reserve-icon.qr-icon:hover {
+    background-color: #ffffff;
+    transform: scale(1.03);
+}
+/* ============ 电话/时钟/地图的图标样式 也统一成一样大小 ============ */
+.reserve-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #e0d5c8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    transition: all 0.3s ease;
+}
+.reserve-icon i {
+    font-size: 1.8rem;
+    color: #3c2a1d;
+}
+.reserve-icon:hover {
+    background-color: #ffffff;
+    transform: scale(1.03);
+}
+/* ✅文字层级 严格匹配：白色大字标题 + 浅金色小字详情✅ */
+.reserve-item h3 {
+    font-size: 1.15rem;
+    color: #FFFFFF;
+    font-weight: 500;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+.reserve-item p {
+    font-size: 0.95rem;
+    color: #f0d49c;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ✅底部FOOTER - 纯白背景+居中+深字清晰✅ */
+.footer-section {
+    background-color: #ffffff;
+    color: #3c2a1d;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.footer-section h2 {
+    font-size: 1.6rem;
+    color: #3c2a1d;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.footer-nav {
+    margin-bottom: 15px;
+}
+.footer-nav a {
+    color: #555555;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+.footer-nav a:hover {
+    color: #926639;
+}
+.copyright {
+    color: #999999;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 案例中心样式 */
+.case-center {
+    padding: 80px 0;
+    background-color: #f8f5f2;
+}
+.case-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.case-title h3 {
+    font-size: 2rem;
+    color: #3c2a1d;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+.case-title p {
+    font-size: 0.9rem;
+    color: #926639;
+    letter-spacing: 2px;
+}
+.case-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.case-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.case-item:hover {
+    transform: scale(1.03);
+}
+.case-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+.case-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.case-info h4 {
+    font-size: 1.1rem;
+    color: #3c2a1d;
+    margin-bottom: 5px;
+}
+.case-info p {
+    font-size: 0.85rem;
+    color: #926639;
+}
+
+/* 滨州吾悦店 独立案例详情页 */
+.case-detail-page {
+    padding: 90px 0 72px;
+    background-color: #f8f5f2;
+}
+.detail-top {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+.back-btn {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    color: #3c2a1d;
+    font-size: 1rem;
+    padding: 8px 15px;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.back-btn:hover {
+    color: #926639;
+    background-color: #fff;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+.detail-top h2 {
+    font-size: 2.2rem;
+    color: #3c2a1d;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.detail-status {
+    font-size: 1.1rem;
+    color: #926639;
+    font-weight: 500;
+}
+.detail-big-img {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.detail-big-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.detail-text-box {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.detail-text-box h3 {
+    font-size: 1.5rem;
+    color: #3c2a1d;
+    margin: 30px 0 15px;
+    padding-left: 10px;
+	border-left: 4px solid #926639;
+    font-weight: 700;
+}
+.detail-text-box p {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+/* 捞鲜餐饮集团 集团简介样式 */
+.about-company {
+    padding: 80px 0;
+    background-color: #f8f5f2;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+.section-title::before,
+.section-title::after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    width: 30%;
+    height: 1px;
+    background-color: #926639;
+}
+.section-title::before {left: 0;}
+.section-title::after {right: 0;}
+.section-title h2 {
+    font-size: 1.8rem;
+    color: #3c2a1d;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+.section-title p {
+    font-size: 0.9rem;
+    color: #926639;
+    letter-spacing: 2px;
+}
+.about-content {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 40px;
+    align-items: flex-start;
+}
+.about-label {
+    background-color: #3c2a1d;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 4px;
+}
+.about-label p:first-child {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+.about-label p:nth-child(2) {
+    font-size: 0.9rem;
+    color: #e0d5c8;
+}
+.about-text {padding: 0 10px;}
+.about-text p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+.about-text strong {
+    color: #3c2a1d;
+    font-weight: 700;
+}
+
+/* 文化理念样式 */
+.culture-concept {
+    padding: 80px 0;
+    background-color: #fff;
+}
+.concept-title {
+    text-align: center;
+    margin-bottom: 60px;
+    color: #3c2a1d;
+}
+.concept-title h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+.concept-title p {
+    font-size: 0.9rem;
+    color: #926639;
+    letter-spacing: 2px;
+}
+.concept-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.concept-item {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f8f5f2;
+    border-radius: 8px;
+}
+.concept-item h3 {
+    font-size: 1.2rem;
+    color: #3c2a1d;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.concept-item p {
+    font-size: 0.95rem;
+    color: #555;
+	line-height: 1.6;
+}
+
+/* 公司荣誉样式 */
+.company-honor {
+    padding: 80px 0;
+    background-color: #f8f5f2;
+}
+.honor-title {
+    text-align: center;
+    margin-bottom: 60px;
+    color: #3c2a1d;
+}
+.honor-title h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+.honor-title p {
+    font-size: 0.9rem;
+    color: #926639;
+    letter-spacing: 2px;
+}
+.honor-list ul {
+    list-style: none;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.honor-list li {
+    font-size: 1rem;
+    color: #555;
+    line-height: 2.2;
+    padding: 8px 20px;
+    background-color: #fff;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+/* 创始人 刘学利 核心样式 */
+.founder-box {
+    padding: 80px 0;
+    background-color: #fff;
+}
+.founder-content {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 50px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.founder-img {
+    width: 320px;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 8px solid #f8f5f2;
+    margin: 0 auto;
+}
+.founder-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.founder-text {padding: 0 20px;}
+.founder-text p strong {
+    font-size: 1.3rem;
+    color: #3c2a1d;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 20px;
+    padding-left: 10px;
+	border-left: 4px solid #926639;
+}
+.founder-text ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+.founder-text ul li {
+    font-size: 1rem;
+    color: #555;
+    line-height: 2;
+    padding: 5px 0;
+}
+.founder-desc {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* 高端门店相册轮播 核心样式 */
+.store-album {
+    padding: 100px 0;
+    background-color: #f8f5f2;
+    overflow: hidden;
+    position: relative;
+}
+.album-title {
+    text-align: center;
+    margin-bottom: 80px;
+    color: #3c2a1d;
+}
+.album-title h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.album-title p {
+    font-size: 0.95rem;
+    color: #926639;
+    letter-spacing: 2px;
+}
+.album-swiper-box {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.album-swiper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.swiper-item {
+    position: absolute;
+    width: 60%;
+    height: 420px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    opacity: 0.8;
+}
+.swiper-item.active {
+    width: 70%;
+    height: 480px;
+    z-index: 10;
+    opacity: 1;
+    transform: scale(1);
+}
+.swiper-item.prev {
+    width: 50%;
+    height: 380px;
+    z-index: 5;
+    opacity: 0.6;
+    transform: translateX(-60%) scale(0.9);
+}
+.swiper-item.next {
+    width: 50%;
+    height: 380px;
+    z-index: 5;
+    opacity: 0.6;
+    transform: translateX(60%) scale(0.9);
+}
+.swiper-item.hide {
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+.swiper-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.swiper-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(60, 42, 29, 0.7);
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.3s ease;
+}
+.swiper-btn:hover {
+    background-color: #926639;
+    transform: translateY(-50%) scale(1.05);
+}
+.swiper-prev {left: 20px;}
+.swiper-next {right: 20px;}
+
+/* ========== 手机端全局适配 ========== */
+@media (max-width: 768px) {
+    .about-content {grid-template-columns: 1fr;}
+    .concept-list {grid-template-columns: 1fr 1fr;}
+    .founder-content {grid-template-columns: 1fr;}
+    .founder-img {width: 280px;height: 280px;}
+    .section-title::before, .section-title::after {width: 20%;}
+    .store-album {padding: 60px 0;}
+    .album-swiper-box {height: 320px;}
+    .swiper-item {width: 85%;height: 260px;}
+    .swiper-item.active {width: 90%;height: 300px;}
+    .swiper-item.prev, .swiper-item.next {opacity: 0;}
+    .swiper-btn {width: 40px;height: 40px;font-size: 1.5rem;}
+    .swiper-prev {left: 10px;}
+    .swiper-next {right: 10px;}
+    .logo-container {width: 60px;height: 35px;}
+    .reserve-info {flex-direction: column;gap:30px;}
+    .reserve-item {width:100%;height:auto;}
+    .menu-list {grid-template-columns:1fr 1fr;}
+    .case-detail-page {padding:80px 0 60px;}
+    .back-btn {position:relative;left:0;display:inline-block;margin-bottom:20px;}
+    .detail-top h2 {font-size:1.8rem;}
+    .detail-status {font-size:1rem;}
+}
